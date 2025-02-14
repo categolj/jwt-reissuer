@@ -6,6 +6,8 @@ import java.io.UncheckedIOException;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.web.client.RestClientSsl;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +23,11 @@ public class OidcController {
 
 	private final RestClient restClient;
 
+	private final Logger log = LoggerFactory.getLogger(getClass());
+
 	public OidcController(KubernetesProps props, RestClient.Builder restClientBuilder, RestClientSsl clientSsl) {
 		if (StringUtils.hasLength(props.clientBundleName())) {
-			System.out.println("Configure " + props.clientBundleName());
+			log.info("Use clientBundle: {}", props.clientBundleName());
 			restClientBuilder.apply(clientSsl.fromBundle(props.clientBundleName()));
 		}
 		this.restClient = restClientBuilder.defaultHeaders(headers -> {
