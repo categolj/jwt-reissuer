@@ -133,9 +133,6 @@
             <id>process-aot</id>
             <configuration>
               <systemPropertyVariables>
-                <management.otlp.logging.export.enabled/>
-                <management.otlp.metrics.export.enabled/>
-                <management.otlp.tracing.export.enabled/>
               </systemPropertyVariables>
             </configuration>
           </execution>
