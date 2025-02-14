@@ -133,12 +133,9 @@
             <id>process-aot</id>
             <configuration>
               <systemPropertyVariables>
-                <management.otlp.tracing.endpoint>
-                  http://otel-collector.opentelemetry.svc.cluster.local:4318/v1/traces
-                </management.otlp.tracing.endpoint>
-                <management.otlp.logs.endpoint>
-                  http://otel-collector.opentelemetry.svc.cluster.local:4318/v1/logs
-                </management.otlp.logs.endpoint>
+                <management.otlp.logging.export.enabled/>
+                <management.otlp.metrics.export.enabled/>
+                <management.otlp.tracing.export.enabled/>
               </systemPropertyVariables>
             </configuration>
           </execution>
