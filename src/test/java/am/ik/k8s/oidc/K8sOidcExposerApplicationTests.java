@@ -13,7 +13,8 @@ import org.springframework.web.client.RestClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+		properties = "kubernetes.api-server-url=https://accounts.google.com")
 class K8sOidcExposerApplicationTests {
 
 	RestClient restClient;
@@ -23,7 +24,10 @@ class K8sOidcExposerApplicationTests {
 
 	@BeforeEach
 	void setup(@Autowired RestClient.Builder restClientBuilder) {
-		this.restClient = restClientBuilder.baseUrl("http://localhost:" + port).build();
+		this.restClient = restClientBuilder.baseUrl("http://localhost:" + port)
+			.defaultStatusHandler(s -> true, (request, response) -> {
+				/* no-op */})
+			.build();
 	}
 
 	@Test
@@ -51,6 +55,17 @@ class K8sOidcExposerApplicationTests {
 		assertThat(body.has("keys")).isTrue();
 		assertThat(body.get("keys").isArray()).isTrue();
 		assertThat(body.get("keys").size()).isEqualTo(1);
+	}
+
+	@Test
+	void invalidToken() {
+		String token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImExIn0.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTMxNzYyMDY1fQ.z4qfO0leZK2mYp_w-jFNidTx-Ri0PRMHLsOAG1Den7ZR4QntIJhU17U0afgoe5VzISXS6jW61ga3XEk39ey1G7a_-ARIVZLYN11fHDhsPuzN7PPkbT5uWpHEUhVWRR8dxHqXmNiDaWjNhTnzHCBpfrRHj5pR_dzubbuE_uPuvDk";
+		ResponseEntity<JsonNode> response = this.restClient.post()
+			.uri("/token")
+			.headers(httpHeaders -> httpHeaders.setBearerAuth(token))
+			.retrieve()
+			.toEntity(JsonNode.class);
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
 	}
 
 }
