@@ -1,4 +1,4 @@
-package am.ik.k8s;
+package am.ik.reissuer;
 
 import org.springframework.boot.test.context.TestConfiguration;
 

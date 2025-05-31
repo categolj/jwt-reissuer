@@ -1,4 +1,4 @@
-package am.ik.k8s.jwt;
+package am.ik.reissuer.jwt;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +20,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.util.StreamUtils;
 
-@ConfigurationProperties(prefix = "jwt")
+@ConfigurationProperties(prefix = "reissuer.jwt")
 public final class JwtProps {
 
 	private final String keyId;

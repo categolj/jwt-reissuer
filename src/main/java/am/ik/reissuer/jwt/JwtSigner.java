@@ -1,4 +1,4 @@
-package am.ik.k8s.jwt;
+package am.ik.reissuer.jwt;
 
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JOSEObjectType;

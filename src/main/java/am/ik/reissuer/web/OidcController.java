@@ -1,6 +1,6 @@
-package am.ik.k8s.web;
+package am.ik.reissuer.web;
 
-import am.ik.k8s.jwt.JwtProps;
+import am.ik.reissuer.jwt.JwtProps;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import java.util.List;

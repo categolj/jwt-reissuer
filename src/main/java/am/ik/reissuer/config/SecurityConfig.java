@@ -1,4 +1,4 @@
-package am.ik.k8s.config;
+package am.ik.reissuer.config;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -32,7 +32,7 @@ public class SecurityConfig {
 
 	@Bean
 	public JwkSetUriJwtDecoderBuilderCustomizer jwkSetUriJwtDecoderBuilderCustomizer(
-			RestTemplateBuilder restTemplateBuilder, KubernetesProps props, SslBundles sslBundles,
+			RestTemplateBuilder restTemplateBuilder, OidcProps props, SslBundles sslBundles,
 			LogbookClientHttpRequestInterceptor logbookClientHttpRequestInterceptor) {
 		return builder -> {
 			try {

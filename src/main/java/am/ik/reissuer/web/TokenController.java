@@ -1,7 +1,7 @@
-package am.ik.k8s.web;
+package am.ik.reissuer.web;
 
-import am.ik.k8s.jwt.JwtProps;
-import am.ik.k8s.jwt.JwtSigner;
+import am.ik.reissuer.jwt.JwtProps;
+import am.ik.reissuer.jwt.JwtSigner;
 import com.nimbusds.jwt.JWTClaimsSet;
 import java.time.Clock;
 import java.time.Instant;

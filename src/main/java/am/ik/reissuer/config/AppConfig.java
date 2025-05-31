@@ -1,4 +1,4 @@
-package am.ik.k8s.config;
+package am.ik.reissuer.config;
 
 import java.time.Clock;
 import org.springframework.boot.web.client.RestClientCustomizer;

@@ -1,4 +1,4 @@
-package am.ik.k8s;
+package am.ik.reissuer;
 
 import java.io.BufferedReader;
 import java.io.IOException;

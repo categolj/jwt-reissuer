@@ -9,11 +9,11 @@
     <version>3.5.0</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>am.ik.k8s</groupId>
-  <artifactId>k8s-jwt-exchanger</artifactId>
+  <groupId>am.ik.reissuer</groupId>
+  <artifactId>jwt-reissuer</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>k8s-jwt-exchanger</name>
-  <description>k8s-jwt-exchanger</description>
+  <name>jwt-reissuer</name>
+  <description>jwt-reissuer</description>
   <url/>
   <licenses>
     <license/>

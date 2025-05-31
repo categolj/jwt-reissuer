@@ -1,4 +1,4 @@
-package am.ik.k8s;
+package am.ik.reissuer;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.TextNode;
@@ -14,8 +14,8 @@ import org.springframework.web.client.RestClient;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-		properties = "kubernetes.api-server-url=https://accounts.google.com")
-class K8SJwtExchangerApplicationTests {
+		properties = "reissuer.oidc.api-server-url=https://accounts.google.com")
+class JwtReissuerApplicationTests {
 
 	RestClient restClient;
 
