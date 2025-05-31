@@ -1,7 +1,7 @@
-package am.ik.k8s.oidc.web;
+package am.ik.k8s.web;
 
-import am.ik.k8s.oidc.jwt.JwtProps;
-import am.ik.k8s.oidc.jwt.JwtSigner;
+import am.ik.k8s.jwt.JwtProps;
+import am.ik.k8s.jwt.JwtSigner;
 import com.nimbusds.jwt.JWTClaimsSet;
 import java.util.Date;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package am.ik.k8s.oidc.config;
+package am.ik.k8s.config;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;

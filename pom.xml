@@ -10,10 +10,10 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>am.ik.k8s</groupId>
-  <artifactId>k8s-oidc-exposer</artifactId>
+  <artifactId>k8s-jwt-exchanger</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>k8s-oidc-exposer</name>
-  <description>k8s-oidc-exposer</description>
+  <name>k8s-jwt-exchanger</name>
+  <description>k8s-jwt-exchanger</description>
   <url/>
   <licenses>
     <license/>

@@ -1,4 +1,4 @@
-package am.ik.k8s.oidc;
+package am.ik.k8s;
 
 import java.io.BufferedReader;
 import java.io.IOException;

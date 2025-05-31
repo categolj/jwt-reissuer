@@ -1,4 +1,4 @@
-package am.ik.k8s.oidc.config;
+package am.ik.k8s.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.io.Resource;

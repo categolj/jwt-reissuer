@@ -1,6 +1,6 @@
-package am.ik.k8s.oidc.web;
+package am.ik.k8s.web;
 
-import am.ik.k8s.oidc.jwt.JwtProps;
+import am.ik.k8s.jwt.JwtProps;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import java.util.List;

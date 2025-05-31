@@ -1,4 +1,4 @@
-package am.ik.k8s.oidc;
+package am.ik.k8s;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.TextNode;
@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
 		properties = "kubernetes.api-server-url=https://accounts.google.com")
-class K8sOidcExposerApplicationTests {
+class K8SJwtExchangerApplicationTests {
 
 	RestClient restClient;
 
