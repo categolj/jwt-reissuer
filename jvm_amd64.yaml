@@ -1,2 +1,2 @@
-image: ghcr.io/categolj/jwt-reissuer@sha256:6f1ca45d519d7ce660213b6458e99a51ca39911b4b9082a79abc77708b396d09
-git_revision: ddb1bcdcd10a2e6d031fecd882194af10a152d51
+image: ghcr.io/categolj/jwt-reissuer@sha256:4f8e8d1a5bdff1c503648ae20370a54ad9bf3e83ac9d705561be7708d1ead478
+git_revision: 1b57b8d1b7401aeadf6c2c48f801320627d306fc
