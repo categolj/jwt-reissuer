@@ -10,6 +10,7 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
+import java.time.Duration;
 import java.util.Base64;
 import java.util.List;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -30,8 +31,11 @@ public final class JwtProps {
 
 	private final List<String> audience;
 
-	public JwtProps(String keyId, String publicKey, String privateKey, List<String> audience) {
+	private final Duration tokenTtl;
+
+	public JwtProps(String keyId, String publicKey, String privateKey, List<String> audience, Duration tokenTtl) {
 		this.keyId = keyId;
+		this.tokenTtl = tokenTtl;
 		// to support `base64:` prefix
 		ResourceLoader resourceLoader = ApplicationResourceLoader.get();
 		this.publicKey = resourceToPublicKey(resourceLoader.getResource(publicKey));
@@ -53,6 +57,10 @@ public final class JwtProps {
 
 	public List<String> audience() {
 		return audience;
+	}
+
+	public Duration tokenTtl() {
+		return tokenTtl;
 	}
 
 	static RSAPublicKey resourceToPublicKey(Resource resource) {

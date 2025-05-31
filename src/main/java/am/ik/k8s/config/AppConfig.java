@@ -1,5 +1,6 @@
 package am.ik.k8s.config;
 
+import java.time.Clock;
 import org.springframework.boot.web.client.RestClientCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +11,13 @@ import org.zalando.logbook.spring.LogbookClientHttpRequestInterceptor;
 public class AppConfig {
 
 	@Bean
-	public RestClientCustomizer restClientCustomizer(Logbook logbook) {
+	RestClientCustomizer restClientCustomizer(Logbook logbook) {
 		return builder -> builder.requestInterceptor(new LogbookClientHttpRequestInterceptor(logbook));
+	}
+
+	@Bean
+	Clock clock() {
+		return Clock.systemDefaultZone();
 	}
 
 }
