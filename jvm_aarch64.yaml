@@ -1,2 +1,2 @@
-image: ghcr.io/categolj/k8s-jwt-exchanger@sha256:a92b8d71914a5d53a349b57369568be5cc4bb78cdcff14e8ce1b4080959fb60d
-git_revision: 7bdb97179aff2d1c5d579e4b0094a4baa3332f41
+image: ghcr.io/categolj/k8s-jwt-exchanger@sha256:dc89fe918b994da9be8c5991b87fd8b252b0987222f892b9b975f3da21cca541
+git_revision: 44811488ba7532910cd7ecee50d4fff29b9a1caa
