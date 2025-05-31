@@ -1,2 +1,2 @@
-image: ghcr.io/categolj/k8s-oidc-exposer@sha256:f23eda60620e8b49010149e6d2693e242257256541144a5d91a5ec656218fd3e
-git_revision: 41c10dab122cf796aa4d3f4b0d2dd288607e04eb
+image: ghcr.io/categolj/k8s-jwt-exchanger@sha256:ec60e55609b6de9702d2e102eb37f92bfd752a36f7c6049680208ec07f1a06cb
+git_revision: 7bdb97179aff2d1c5d579e4b0094a4baa3332f41
