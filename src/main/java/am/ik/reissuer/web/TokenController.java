@@ -28,8 +28,8 @@ public class TokenController {
 		this.clock = clock;
 	}
 
-	@PostMapping(path = "/token")
-	public String token(@AuthenticationPrincipal Jwt jwt, UriComponentsBuilder uriComponentsBuilder) {
+	@PostMapping(path = { "/token", "/reissue" })
+	public String reissueToken(@AuthenticationPrincipal Jwt jwt, UriComponentsBuilder uriComponentsBuilder) {
 		String issuer = uriComponentsBuilder.path("").build().toString();
 		Instant now = clock.instant();
 		JWTClaimsSet.Builder jwtBuilder = new JWTClaimsSet.Builder().issuer(issuer)
