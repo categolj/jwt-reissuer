@@ -10,7 +10,9 @@ services (like AWS STS).
 Deploy the JWT Reissuer with the following configuration:
 
 ```yaml
-      - env:
+      - name: jwt-reissuer
+        image: ghcr.io/categolj/jwt-reissuer:native
+        env:
         - name: reissuer.jwt.public-key
           value: file:/etc/keys/pub.pem
         - name: reissuer.jwt.private-key
@@ -34,7 +36,7 @@ Deploy the JWT Reissuer with the following configuration:
           secretName: rsa-key1
 ```
 
-+
+and
 
 ```yaml
 apiVersion: v1
@@ -53,6 +55,9 @@ stringData:
     ...
     -----END PRIVATE KEY-----
 ```
+
+You should also need an HTTPS ingress to access the JWT Reissuer API.
+
 
 Create an OpenID Connect (OIDC) provider in AWS IAM:
 
