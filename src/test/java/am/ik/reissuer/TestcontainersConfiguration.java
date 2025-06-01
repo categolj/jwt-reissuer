@@ -30,7 +30,7 @@ class TestcontainersConfiguration {
 
 	@Bean
 	DynamicPropertyRegistrar dynamicPropertyRegistrar(GenericContainer<?> authorizationServer) {
-		return registry -> registry.add("reissuer.oidc.api-server-url",
+		return registry -> registry.add("reissuer.oidc.issuer-uri",
 				() -> "http://127.0.0.1:" + authorizationServer.getMappedPort(9000));
 	}
 

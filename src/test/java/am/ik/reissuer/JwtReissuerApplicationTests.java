@@ -35,13 +35,12 @@ class JwtReissuerApplicationTests {
 	Function<Set<String>, String> accessTokenSupplier;
 
 	@BeforeEach
-	void setup(@Autowired RestClient.Builder restClientBuilder,
-			@Value("${reissuer.oidc.api-server-url}") String issuerUrl) {
+	void setup(@Autowired RestClient.Builder restClientBuilder, @Value("${reissuer.oidc.issuer-uri}") URI issuerUrl) {
 		this.restClient = restClientBuilder.baseUrl("http://localhost:" + port)
 			.defaultStatusHandler(s -> true, (request, response) -> {
 				/* no-op */})
 			.build();
-		this.accessTokenSupplier = scopes -> OAuth2.authorizationCodeFlow(URI.create(issuerUrl),
+		this.accessTokenSupplier = scopes -> OAuth2.authorizationCodeFlow(issuerUrl,
 				restClientBuilder.defaultStatusHandler(s -> true, (request, response) -> {
 					/* no-op */}).build(),
 				new OAuth2.User("test@example.com", "test"), new OAuth2.Client("test-app", "secret"),
