@@ -203,7 +203,7 @@ spec:
     - |
       while true; do
         echo "\$(date): Refreshing token..."
-        curl -s --fail -XPOST https://${JWT_REISSUER_DOMAIN}/token -H "Authorization: Bearer \$(cat /run/secrets/kubernetes.io/serviceaccount/token)" -o /tmp/token
+        curl -s --fail -XPOST https://${JWT_REISSUER_DOMAIN}/reissue -H "Authorization: Bearer \$(cat /run/secrets/kubernetes.io/serviceaccount/token)" -o /tmp/token
         if [ \$? -eq 0 ]; then
           echo "\$(date): Token refreshed successfully"
         else
